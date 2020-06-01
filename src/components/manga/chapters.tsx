@@ -56,7 +56,7 @@ class Chapters extends React.Component {
 					this.state.chapter.sources.map((url, i) => {
 						return (
 							<div className="page" key={i}>
-								<img className="pageImg" src={url} loading="lazy" />
+								<img className="pageImg" alt="Page" src={url} loading="lazy" />
 							</div>
 						)
 					})

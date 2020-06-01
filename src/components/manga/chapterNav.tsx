@@ -10,6 +10,7 @@ class ChapterNav extends React.Component<ChapterNavProps> {
 		console.log(this);
 
 		let { currentChapter, chapters } = this.props;
+		currentChapter = Number(currentChapter);
 		let doNext = chapters.find(v => v === currentChapter + 1);
 		let doPrevious = chapters.find(v => v === currentChapter - 1);
 
