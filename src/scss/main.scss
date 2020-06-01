@@ -1,11 +1,25 @@
 
 :root {
 	--main: #485acf;
+	--text: #191919;
+	--body: white;
+	--border: rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		--main: #5855ff;
+		--text: white;
+		--body: #191919;
+		--border: rgba(255, 255, 255, 0.1);
+	}
 }
 
 body {
 	margin: 0;
-	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	background: var(--body);
+	color: var(--text);
 }
 
 %center {

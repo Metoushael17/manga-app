@@ -23,7 +23,7 @@ class Chapters extends React.Component {
 		// @ts-ignore For some reason there's no match property on the thing
 		let { id, chapter } = this.props.match.params;
 		
-		let newUrl = "https://cors-anywhere.herokuapp.com/https://mangaseeonline.us/read-online/%slug%.html";
+		let newUrl = "https://thingproxy.freeboard.io/fetch/https://mangaseeonline.us/read-online/%slug%.html";
 
 		let data = await mangasee(newUrl, `${id}-chapter-%chapter%`, chapter ?? 0);
 		this.setState({
@@ -36,7 +36,7 @@ class Chapters extends React.Component {
 		// @ts-ignore For some reason there's no match property on the thing
 		let { id, chapter } = this.props.match.params;
 		
-		let newUrl = "https://cors-anywhere.herokuapp.com/https://mangaseeonline.us/read-online/%slug%.html";
+		let newUrl = "https://thingproxy.freeboard.io/fetch/https://mangaseeonline.us/read-online/%slug%.html";
 
 		let data = await mangasee(newUrl, `${id}-chapter-%chapter%`, chapter ?? 0);
 		this.setState({
