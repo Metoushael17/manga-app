@@ -1,0 +1,19 @@
+
+:root {
+	--main: #485acf;
+}
+
+body {
+	margin: 0;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+%center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@import "layout";
+@import "layout/header";
+@import "manga";

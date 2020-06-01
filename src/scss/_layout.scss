@@ -1,0 +1,10 @@
+.bodyWrapper {
+	@extend %center;
+
+	.body {
+		margin: 40px 0;
+		width: 90%;
+		max-width: 1300px;
+	}
+
+}
