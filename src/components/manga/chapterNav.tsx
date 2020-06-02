@@ -33,7 +33,7 @@ class ChapterNav extends React.Component<ChapterNavProps> {
 		)
 
 		return (
-			<nav>
+			<nav className="chapterNav">
 				{doPrevious ? previousChapterButton : <div></div>}
 				{doNext ? nextChapterButton : <div></div>}
 

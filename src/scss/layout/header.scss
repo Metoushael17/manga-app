@@ -1,4 +1,6 @@
 
+@import "footer";
+
 %center {
 	display: flex;
 	justify-content: center;
@@ -19,4 +21,27 @@ header {
 	top: 0;
 	left: 0;
 	@extend %center;
+
+	& > div {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	img.icon {
+		height: 30px;
+		display: block;
+	}
+
+	nav {
+
+		a {
+			color: inherit;
+		}
+
+		a + a {
+			margin-left: 20px;
+		}
+	}
+
 }

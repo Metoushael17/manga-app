@@ -1,5 +1,5 @@
 
-nav {
+nav.chapterNav {
 
 	position: fixed;
 	display: flex;
@@ -13,7 +13,7 @@ nav {
 		grid-template-columns: 1fr auto;
 		grid-gap: 10px;
 		padding: 10px;
-		background: var(--body);
+		background: var(--bodyHarsh);
 		text-decoration: none;
 		color: var(--text);
 
@@ -31,7 +31,7 @@ nav {
 
 @media screen and (min-width: 701px) {
 	// Desktop view
-	nav {
+	nav.chapterNav {
 		right: 10px;
 		top: 10px + 50px;
 		border: 1px solid var(--border);
@@ -50,13 +50,12 @@ nav {
 }
 @media screen and (max-width: 700px) {
 	// Mobile view
-	nav {
+	nav.chapterNav {
 		width: 100%;
 		left: 0;
-		bottom: 0;
+		bottom: calc(50px + 1px + env(safe-area-inset-bottom));
 		background: var(--bodyHarsh);
 		border-top: 1px solid var(--border);
-		padding-bottom: env(safe-area-inset-bottom);
 
 		.chapterNavItem {
 			background: transparent;

@@ -1,3 +1,9 @@
+
+.bodyWidth {
+	width: 80%;
+	max-width: 1300px;
+}
+
 .bodyWrapper {
 	@extend %center;
 

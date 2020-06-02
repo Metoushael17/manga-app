@@ -1,8 +1,8 @@
 :root {
   --main: #485acf;
   --text: #191919;
-  --body: #F2F3F7;
-  --bodyHarsh: white;
+  --bodyHarsh: #F2F3F7;
+  --body: white;
   --border: #e5e5e5;
 }
 
@@ -28,6 +28,11 @@ header, .bodyWrapper {
   align-items: center;
 }
 
+.bodyWidth {
+  width: 80%;
+  max-width: 1300px;
+}
+
 .bodyWrapper .body {
   width: 100%;
 }
@@ -35,54 +40,53 @@ header, .bodyWrapper {
   padding: 0 5vw;
 }
 
-nav {
+nav.chapterNav {
   position: fixed;
   display: flex;
   justify-content: space-between;
   background: var(--border);
   overflow: hidden;
 }
-nav .chapterNavItem {
+nav.chapterNav .chapterNavItem {
   display: grid;
   align-items: center;
   grid-template-columns: 1fr auto;
   grid-gap: 10px;
   padding: 10px;
-  background: var(--body);
+  background: var(--bodyHarsh);
   text-decoration: none;
   color: var(--text);
 }
-nav .chapterNavItem svg {
+nav.chapterNav .chapterNavItem svg {
   display: block;
 }
-nav .chapterNavItem + .chapterNavItem {
+nav.chapterNav .chapterNavItem + .chapterNavItem {
   margin-left: 1px;
 }
 
 @media screen and (min-width: 701px) {
-  nav {
+  nav.chapterNav {
     right: 10px;
     top: 60px;
     border: 1px solid var(--border);
     border-radius: 4px;
   }
-  nav .chapterNavItem {
+  nav.chapterNav .chapterNavItem {
     grid-template-columns: 100%;
   }
-  nav .chapterNavItem span {
+  nav.chapterNav .chapterNavItem span {
     display: none;
   }
 }
 @media screen and (max-width: 700px) {
-  nav {
+  nav.chapterNav {
     width: 100%;
     left: 0;
-    bottom: 0;
+    bottom: calc(50px + 1px + env(safe-area-inset-bottom));
     background: var(--bodyHarsh);
     border-top: 1px solid var(--border);
-    padding-bottom: env(safe-area-inset-bottom);
   }
-  nav .chapterNavItem {
+  nav.chapterNav .chapterNavItem {
     background: transparent;
   }
 
@@ -98,6 +102,20 @@ nav .chapterNavItem + .chapterNavItem {
     background: var(--border);
   }
 }
+.footerNav {
+  width: 100%;
+  height: 50px;
+  padding: 0 10px;
+  background: var(--bodyHarsh);
+  padding-bottom: env(safe-area-inset-bottom);
+  border-top: 1px solid var(--border);
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 header, .bodyWrapper {
   display: flex;
   justify-content: center;
@@ -117,6 +135,21 @@ header {
   position: fixed;
   top: 0;
   left: 0;
+}
+header > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header img.icon {
+  height: 30px;
+  display: block;
+}
+header nav a {
+  color: inherit;
+}
+header nav a + a {
+  margin-left: 20px;
 }
 
 .chapterLink .isLink .linkImage, .chapterLink .isLink {
@@ -158,7 +191,15 @@ header {
 .imageWrapper img {
   scroll-snap-align: start;
   width: 100vw;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 50px - 20px);
+  max-height: calc(100vh - 50px - 20px);
+}
+
+@media screen and (max-width: 700px) {
+  .imageWrapper img {
+    height: calc(100vh - 50px - 30px - 150px + env(safe-area-inset-bottom));
+    max-height: calc(100vh - 50px - 30px - 150px + env(safe-area-inset-bottom));
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

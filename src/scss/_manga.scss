@@ -44,7 +44,17 @@
 	img {
 		scroll-snap-align: start;
 		width: 100vw;
-		height: calc(100vh - 70px);
+		$mh: calc(100vh - 50px - 20px);
+		height: $mh;
+		max-height: $mh;
 	}
 
+}
+
+@media screen and (max-width: 700px) {
+	.imageWrapper img {
+		$mh: calc(100vh - 50px - 30px - 150px + env(safe-area-inset-bottom));
+		height: $mh;
+		max-height: $mh;
+	}
 }
