@@ -29,14 +29,9 @@
 
 }
 
-.page {
-	background: #F2F3F7;
-
-	.pageImg {
-		object-fit: contain;
-		display: block;
-	}
-
+.page .pageImg {
+	object-fit: contain;
+	display: block;
 }
 
 .imageWrapper {

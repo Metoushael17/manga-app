@@ -32,13 +32,9 @@ class Chapters extends React.Component<RouteComponentProps<{ id: string, chapter
 
 		let data = await mangasee(newUrl, `${id}-chapter-%chapter%`, Number(chapter ?? 1));
 
-		if(Number(this.props.match.params.chapter) === data.current.chapter || !this.props.match.params.chapter) {
-			/// Will only run if this is the same
-			// chapter as the current page
-			this.setState({
-				chapter: data
-			});
-		}
+		this.setState({
+			chapter: data
+		});
 	}
 
 	async componentDidMount() {
