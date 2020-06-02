@@ -1,4 +1,5 @@
 import React from "react";
+import { RouteComponentProps } from "react-router";
 import { Link } from "react-router-dom";
 import mangasee from "./mangasee";
 import ChapterNav from "./chapterNav";
@@ -7,7 +8,7 @@ import ChapterNav from "./chapterNav";
  * This component holds navigation and such for chapters
  * Also includes the images
  */
-class Chapters extends React.Component {
+class Chapters extends React.Component<RouteComponentProps<{ id: string, chapter?: string }>> {
 
 	initialState = {
 		chapter: {
@@ -22,17 +23,16 @@ class Chapters extends React.Component {
 	state = Object.assign({}, this.initialState);
 
 	async updateState() {
-		// @ts-ignore For some reason there's no match property on the thing
 		let { id, chapter } = this.props.match.params;
+		if(Number(chapter) === Number(this.state.chapter.current.chapter)) return;
 		
 		let msUrl = "https://mangaseeonline.us/read-online/%slug%.html";
 		// let newUrl = "https://thingproxy.freeboard.io/fetch/" + msUrl;
 		let newUrl = "https://api.allorigins.win/get?url=" + msUrl;
 
-		let data = await mangasee(newUrl, `${id}-chapter-%chapter%`, chapter ?? 1);
+		let data = await mangasee(newUrl, `${id}-chapter-%chapter%`, Number(chapter ?? 1));
 
-		// @ts-ignore
-		if(this.props.match.params.chapter === data.current.chapter || !this.props.match.params.chapter) {
+		if(Number(this.props.match.params.chapter) === data.current.chapter || !this.props.match.params.chapter) {
 			/// Will only run if this is the same
 			// chapter as the current page
 			this.setState({
@@ -50,7 +50,6 @@ class Chapters extends React.Component {
 	}
 
 	render() {
-		// @ts-ignore For some reason there's no match property on the thing
 		let { id, chapter } = this.props.match.params;
 		if(chapter) {
 			return (
