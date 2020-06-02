@@ -2,9 +2,13 @@
 	@extend %center;
 
 	.body {
-		margin: 40px 0;
-		width: 90%;
+		margin: 20px 0;
+		width: 100%;
 		max-width: 1300px;
+	}
+
+	.chapterList {
+		padding: 0 5vw;
 	}
 
 }

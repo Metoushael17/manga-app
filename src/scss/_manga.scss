@@ -32,9 +32,26 @@
 .page {
 	margin-top: 10px;
 	background: #F2F3F7;
+
+	.pageImg {
+		object-fit: contain;
+		display: block;
+	}
+
 }
-.pageImg {
-	width: 100%;
+
+.imageWrapper {
+	display: flex;
+	flex-wrap: nowrap;
 	max-width: 100vw;
-	object-fit: contain;
+	overflow-x: scroll;
+	scroll-snap-type: x mandatory;
+
+	img {
+		scroll-snap-align: start;
+		width: 100vw;
+		max-width: 1300px;
+		height: calc(100vh - 150px);
+	}
+
 }

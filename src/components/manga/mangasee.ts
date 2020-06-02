@@ -48,7 +48,8 @@ async function getPageSrc(rootUrl: string, slug: string, chapter: number): Promi
 	  .replace(/%chapter%/g, chapter.toString())
 
 	// Get HTML from page
-	let pageHTML = await (await fetch(url)).text();
+	// let pageHTML = await (await fetch(url)).text();
+	let pageHTML: string = (await (await fetch(url)).json()).contents;
 
 	// Extract source from page
 	let sources = (pageHTML.match(/<div class=("|')fullchapimage("|')><img src="[a-z|A-Z|:|\/|\d|\.|-]+"><\/div>/g) ?? []).map(match => {

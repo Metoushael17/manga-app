@@ -9,7 +9,7 @@ import ChapterNav from "./chapterNav";
  */
 class Chapters extends React.Component {
 
-	state = {
+	initialState = {
 		chapter: {
 			sources: [],
 			chapters: [],
@@ -19,16 +19,26 @@ class Chapters extends React.Component {
 		}
 	}
 
+	state = Object.assign({}, this.initialState);
+
 	async updateState() {
 		// @ts-ignore For some reason there's no match property on the thing
 		let { id, chapter } = this.props.match.params;
 		
-		let newUrl = "https://thingproxy.freeboard.io/fetch/https://mangaseeonline.us/read-online/%slug%.html";
+		let msUrl = "https://mangaseeonline.us/read-online/%slug%.html";
+		// let newUrl = "https://thingproxy.freeboard.io/fetch/" + msUrl;
+		let newUrl = "https://api.allorigins.win/get?url=" + msUrl;
 
 		let data = await mangasee(newUrl, `${id}-chapter-%chapter%`, chapter ?? 1);
-		this.setState({
-			chapter: data
-		});
+
+		// @ts-ignore
+		if(this.props.match.params.chapter === data.current.chapter || !this.props.match.params.chapter) {
+			/// Will only run if this is the same
+			// chapter as the current page
+			this.setState({
+				chapter: data
+			});
+		}
 	}
 
 	async componentDidMount() {
@@ -45,17 +55,18 @@ class Chapters extends React.Component {
 		if(chapter) {
 			return (
 				<div className="chapterWrapper">
-					All
 					<ChapterNav chapters={this.state.chapter.chapters} currentChapter={this.state.chapter.current.chapter} />
-					{
-					this.state.chapter.sources.map((url, i) => {
-						return (
-							<div className="page" key={i}>
-								<img className="pageImg" alt="Page" src={url} loading="lazy" />
-							</div>
-						)
-					})
-					}
+					<section className="imageWrapper">
+						{
+						this.state.chapter.sources.map((url, i) => {
+							return (
+								<div className="page" key={i}>
+									<img className="pageImg" alt="Page" src={url} loading="lazy" />
+								</div>
+							)
+						})
+						}
+					</section>
 				</div>
 			)
 		} else {

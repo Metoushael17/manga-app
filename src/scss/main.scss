@@ -2,8 +2,9 @@
 :root {
 	--main: #485acf;
 	--text: #191919;
-	--body: white;
-	--border: rgba(0, 0, 0, 0.1);
+	--body: #F2F3F7;
+	--bodyHarsh: white;
+	--border: #e5e5e5;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -11,6 +12,7 @@
 		--main: #5855ff;
 		--text: white;
 		--body: #191919;
+		--bodyHarsh: var(--body);
 		--border: rgba(255, 255, 255, 0.1);
 	}
 }
@@ -29,5 +31,6 @@ body {
 }
 
 @import "layout";
+@import "layout/nav";
 @import "layout/header";
 @import "manga";

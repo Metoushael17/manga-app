@@ -1,0 +1,78 @@
+
+nav {
+
+	position: fixed;
+	display: flex;
+	justify-content: space-between;
+	background: var(--border); // Acts as a border
+	overflow: hidden;
+
+	.chapterNavItem {
+		display: grid;
+		align-items: center;
+		grid-template-columns: 1fr auto;
+		grid-gap: 10px;
+		padding: 10px;
+		background: var(--body);
+		text-decoration: none;
+		color: var(--text);
+
+		svg {
+			display: block;
+		}
+
+	}
+
+	.chapterNavItem + .chapterNavItem {
+		margin-left: 1px;
+	}
+
+}
+
+@media screen and (min-width: 701px) {
+	// Desktop view
+	nav {
+		right: 10px;
+		top: 10px + 50px;
+		border: 1px solid var(--border);
+		border-radius: 4px;
+
+		.chapterNavItem {
+
+			grid-template-columns: 100%;
+			
+			span {
+				display: none;
+			}
+		}
+
+	}
+}
+@media screen and (max-width: 700px) {
+	// Mobile view
+	nav {
+		width: 100%;
+		left: 0;
+		bottom: 0;
+		background: var(--bodyHarsh);
+		border-top: 1px solid var(--border);
+		padding-bottom: env(safe-area-inset-bottom);
+
+		.chapterNavItem {
+			background: transparent;
+		}
+
+	}
+}
+
+
+@media (hover:hover) {
+	.chapterNavItem {
+
+		transition: background 100ms;
+
+		&:hover {
+			background: var(--border);
+		}
+	}
+}
