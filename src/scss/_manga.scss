@@ -5,7 +5,7 @@
 	box-sizing: border-box;
 }
 
-.chapterList {
+.mangaList {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 	grid-gap: 20px;
@@ -13,6 +13,7 @@
 
 .chapterLink .isLink  {
 
+	height: 100%;
 	text-decoration: none;
 	color: var(--main);
 	padding: 20px;
@@ -44,7 +45,7 @@
 	img {
 		scroll-snap-align: start;
 		width: 100vw;
-		$mh: calc(100vh - 50px - 20px);
+		$mh: calc(100vh - 50px - 20px - 30px);
 		height: $mh;
 		max-height: $mh;
 	}

@@ -8,7 +8,7 @@
 
 @media (prefers-color-scheme: dark) {
   body {
-    --main: #5855ff;
+    --main: black;
     --text: white;
     --body: #191919;
     --bodyHarsh: var(--body);
@@ -33,11 +33,16 @@ header, .bodyWrapper {
   max-width: 1300px;
 }
 
+.search {
+  padding: 5vw;
+}
+
 .bodyWrapper .body {
   width: 100%;
+  padding-bottom: calc(30px + 1px + 20px + env(safe-area-inset-top));
 }
 .bodyWrapper .chapterList {
-  padding: 0 5vw;
+  padding: 5vw;
 }
 
 nav.chapterNav {
@@ -103,8 +108,9 @@ nav.chapterNav .chapterNavItem + .chapterNavItem {
   }
 }
 .footerNav {
+  box-sizing: border-box;
   width: 100%;
-  height: 50px;
+  height: calc(50px + env(safe-area-inset-bottom));
   padding: 0 10px;
   background: var(--bodyHarsh);
   padding-bottom: env(safe-area-inset-bottom);
@@ -112,8 +118,14 @@ nav.chapterNav .chapterNavItem + .chapterNavItem {
   position: fixed;
   bottom: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+}
+.footerNav a {
+  color: inherit;
+}
+.footerNav .footerIcon span {
+  display: none;
 }
 
 header, .bodyWrapper {
@@ -158,13 +170,14 @@ header nav a + a {
   box-sizing: border-box;
 }
 
-.chapterList {
+.mangaList {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   grid-gap: 20px;
 }
 
 .chapterLink .isLink {
+  height: 100%;
   text-decoration: none;
   color: var(--main);
   padding: 20px;
@@ -191,8 +204,8 @@ header nav a + a {
 .imageWrapper img {
   scroll-snap-align: start;
   width: 100vw;
-  height: calc(100vh - 50px - 20px);
-  max-height: calc(100vh - 50px - 20px);
+  height: calc(100vh - 50px - 20px - 30px);
+  max-height: calc(100vh - 50px - 20px - 30px);
 }
 
 @media screen and (max-width: 700px) {

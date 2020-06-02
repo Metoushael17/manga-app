@@ -4,15 +4,20 @@
 	max-width: 1300px;
 }
 
+.search {
+	padding: 5vw;
+}
+
 .bodyWrapper {
 	@extend %center;
 
 	.body {
 		width: 100%;
+		padding-bottom: calc(30px + 1px + 20px + env(safe-area-inset-top))
 	}
 
 	.chapterList {
-		padding: 0 5vw;
+		padding: 5vw;
 	}
 
 }

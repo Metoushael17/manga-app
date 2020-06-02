@@ -1,6 +1,7 @@
 .footerNav {
+	box-sizing: border-box;
 	width: 100%;
-	height: 50px;
+	height: calc(50px + env(safe-area-inset-bottom));
 	padding: 0 10px;
 	background: var(--bodyHarsh);
 	padding-bottom: env(safe-area-inset-bottom);
@@ -8,6 +9,19 @@
 	position: fixed;
 	bottom: 0;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
+
+	a {
+		color: inherit;
+	}
+
+	.footerIcon {
+
+		span {
+			display: none;
+		}
+
+	}
+
 }

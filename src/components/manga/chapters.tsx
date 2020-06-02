@@ -29,7 +29,7 @@ class Chapters extends React.Component<RouteComponentProps<{ id: string, chapter
 		let msUrl = "https://mangaseeonline.us/read-online/%slug%.html";
 		// let newUrl = "https://thingproxy.freeboard.io/fetch/" + msUrl;
 		let newUrl = "https://api.allorigins.win/get?url=" + msUrl;
-
+		
 		let data = await mangasee(newUrl, `${id}-chapter-%chapter%`, Number(chapter ?? 1));
 
 		this.setState({
@@ -67,7 +67,7 @@ class Chapters extends React.Component<RouteComponentProps<{ id: string, chapter
 			)
 		} else {
 			return (
-				<div className="chapterList">
+				<div className="chapterList mangaList">
 					{this.state.chapter.chapters.map(chapterNum => {
 						return (
 							<div className="chapterLink" key={chapterNum}>
