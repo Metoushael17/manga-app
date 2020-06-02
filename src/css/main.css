@@ -143,9 +143,6 @@ header {
   width: 100%;
 }
 
-.page {
-  background: #F2F3F7;
-}
 .page .pageImg {
   object-fit: contain;
   display: block;

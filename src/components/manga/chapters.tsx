@@ -35,6 +35,7 @@ class Chapters extends React.Component<RouteComponentProps<{ id: string, chapter
 		this.setState({
 			chapter: data
 		});
+		document.querySelector(".imageWrapper")?.scrollTo(0, 0);
 	}
 
 	async componentDidMount() {

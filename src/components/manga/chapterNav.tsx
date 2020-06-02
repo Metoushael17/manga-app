@@ -8,10 +8,6 @@ interface ChapterNavProps {
 
 class ChapterNav extends React.Component<ChapterNavProps> {
 
-	resetScroll() {
-		document.querySelector(".imageWrapper")?.scrollTo(0, 0);
-	}
-
 	render() {
 
 		let { currentChapter, chapters } = this.props;
@@ -24,13 +20,13 @@ class ChapterNav extends React.Component<ChapterNavProps> {
 		let doPrevious = chapters.includes(previousChapter);
 
 		let previousChapterButton = (
-			<Link onClick={this.resetScroll} to={(previousChapter).toString()} className="nextChapter chapterNavItem">
+			<Link to={(previousChapter).toString()} className="nextChapter chapterNavItem">
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg>
 				<span>Previous chapter</span>
 			</Link>
 		)
 		let nextChapterButton = (
-			<Link onClick={this.resetScroll} to={(nextChapter).toString()} className="nextChapter chapterNavItem">
+			<Link to={(nextChapter).toString()} className="nextChapter chapterNavItem">
 				<span>Next chapter</span>
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
 			</Link>
