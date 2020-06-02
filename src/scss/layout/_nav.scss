@@ -63,6 +63,9 @@ nav {
 		}
 
 	}
+	.imageWrapper img.pageImg {
+		height: calc(100vh - 50px - 60px);
+	}
 }
 
 

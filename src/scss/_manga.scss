@@ -30,7 +30,6 @@
 }
 
 .page {
-	margin-top: 10px;
 	background: #F2F3F7;
 
 	.pageImg {
@@ -50,8 +49,7 @@
 	img {
 		scroll-snap-align: start;
 		width: 100vw;
-		max-width: 1300px;
-		height: calc(100vh - 150px);
+		height: calc(100vh - 70px);
 	}
 
 }

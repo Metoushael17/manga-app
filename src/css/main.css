@@ -29,9 +29,7 @@ header, .bodyWrapper {
 }
 
 .bodyWrapper .body {
-  margin: 20px 0;
   width: 100%;
-  max-width: 1300px;
 }
 .bodyWrapper .chapterList {
   padding: 0 5vw;
@@ -86,6 +84,10 @@ nav .chapterNavItem + .chapterNavItem {
   }
   nav .chapterNavItem {
     background: transparent;
+  }
+
+  .imageWrapper img.pageImg {
+    height: calc(100vh - 50px - 60px);
   }
 }
 @media (hover: hover) {
@@ -142,7 +144,6 @@ header {
 }
 
 .page {
-  margin-top: 10px;
   background: #F2F3F7;
 }
 .page .pageImg {
@@ -160,8 +161,7 @@ header {
 .imageWrapper img {
   scroll-snap-align: start;
   width: 100vw;
-  max-width: 1300px;
-  height: calc(100vh - 150px);
+  height: calc(100vh - 70px);
 }
 
 /*# sourceMappingURL=main.css.map */
